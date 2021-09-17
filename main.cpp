@@ -27,7 +27,7 @@ void print(const rec &d) {
 int main()
 {
 	rec s;
-	FILE *f;
+	FILE *f, *fcopy;
 	if((f = fopen("db.bin", "ab")) != NULL) {
 		input(s);
 		while(s.id > 0) {
@@ -37,10 +37,11 @@ int main()
 		fclose(f);
 	}
 
-	if((f = fopen("db.bin", "rb")) != NULL) {
+	if((f = fopen("db.bin", "rb")) != NULL && (fcopy = fopen("dbcopy.bin", "ab")) != NULL) {
 		fread(&s, sizeof(s), 1, f);
 		while(!feof(f)) {
 			print(s);
+			fwrite(&s, sizeof(s), 1, fcopy);
 			fread(&s, sizeof(s), 1, f);
 		}
 	}
