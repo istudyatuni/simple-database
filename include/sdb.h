@@ -13,9 +13,10 @@
 
 class SDB
 {
-	char *filename;
+	char *filename, filename_copy[100] = "copy-";
 	FILE *f, *fcopy;
-	void FindWithCopy();
+	void FindWithCopy(int key);
+	void FinishCopy();
 public:
 	SDB(char *filename);
 

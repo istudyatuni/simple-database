@@ -3,7 +3,7 @@
 
 #include "record.h"
 
-void read(Record &s, FILE *f);
-void write(const Record &s, FILE *f);
+void read_from_file(Record &s, FILE *f);
+void write_to_file(const Record &s, FILE *f);
 
 #endif // FILES_H

@@ -1,3 +1,3 @@
-#!/bin/bash
-g++ main.cpp src/* -I include -o out.bin || exit
+#!/bin/sh
+g++ main.cpp src/*.cpp -I include -o out.bin || exit
 ./out.bin
