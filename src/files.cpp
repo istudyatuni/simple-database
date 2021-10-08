@@ -10,3 +10,7 @@ void read_from_file(Record &s, FILE *f) {
 void write_to_file(const Record &s, FILE *f) {
 	fwrite(&s, sizeof(s), 1, f);
 }
+
+void seek_from_begin_file(int offset, FILE *f) {
+	fseek(f, offset * sizeof(Record), SEEK_SET);
+}
