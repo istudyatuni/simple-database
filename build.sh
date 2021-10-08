@@ -1,3 +1,3 @@
 #!/bin/bash
-g++ main.cpp -o out.bin
+g++ main.cpp src/* -I include -o out.bin || exit
 ./out.bin
